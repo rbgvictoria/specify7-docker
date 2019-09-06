@@ -13,16 +13,21 @@ Specify 7 is build upon Specify 6, so you need a running instance of Specify 6.
 
 - Copy your Specify 6 client into the `specify7/specify6_thick_client` directory
 
-- Rename `example.local_specify_settings.py` in `specify7/specify7_config` to `local_specify_settings.py`
+- Rename `example.local_specify_settings.py` in `specify7/specify7_config` to 
+  `local_specify_settings.py`
 
-- Add your database connection details in `local_specify_settings.py`
+- Add your database connection details in `local_specify_settings.py`. If you 
+  want to connect to a local instance of MySQL, use `host.docker.internal`, not 
+  `localhost` as `DATABASE_HOST`.
 
 - Build the Docker image and start the container
   ```
     cd specify7-docker
     docker-compose up -d
   ```
-  Your Specify 7 instance should now be available at `http://localhost:<port>`. I use port number 65001; you can change the port in the `docker-compose.yml` file.
+  Your Specify 7 instance should now be available at `http://localhost:<port>`. 
+  I use port number 65001, because I have another webserver instance running on 
+  port 80, but you can change the port in the `docker-compose.yml` file.
 
 
 
