@@ -1,0 +1,6 @@
+specify7/specify7_config/*
+!specify7/specify7_config/apache2-foreground
+!specify7/specify7_config/local_specify_settings.py
+!specify7/specify7_config/local_specifyweb_apache.conf
+
+

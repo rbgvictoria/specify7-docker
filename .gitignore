@@ -1,0 +1,7 @@
+# exclude everything
+specify7/specify6_thick_client/*
+!specify7/specify6_thick_client/.gitkeep
+specify7/specify7_config/local_specify_settings.py
+private
+.private
+
