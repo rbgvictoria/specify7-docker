@@ -1,26 +1,22 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 LABEL maintainer="Niels Klazenga <github.com/nielsklazenga>"
 
 # Get Ubuntu packages
 RUN apt-get update && apt-get -y install \
-		wget \
-		build-essential \
-		curl \
-		git \
-		python-pip \
-		python-virtualenv \
-		python-mysqldb \
-		apache2 \
-		libapache2-mod-python \
-		libapache2-mod-wsgi \
-		python-mysqldb mysql-client libmysqlclient-dev \
-		nodejs \
-		npm
+	git python-pip python-dev libmysqlclient-dev \
+	apache2 libapache2-mod-python libapache2-mod-wsgi \    
+	build-essential curl
 
+RUN apt-get install -y libssl-dev libsasl2-dev libldap2-dev
+
+# NPM needs to be installed independently from and after libssl-dev, otherwise
+# apt-get will get confused about the dependencies and fail, or remove/disable 
+# NPM
+RUN apt-get install -y nodejs npm
 
 # Get Specify 7
-ARG SPECIFY7_VERSION=7.3.0
+ARG SPECIFY7_VERSION=7.3.1
 ENV SPECIFY7_VERSION ${SPECIFY7_VERSION}
 
 RUN cd /usr/local/ \
@@ -48,7 +44,7 @@ RUN useradd specify \
 	&& chown -R specify.specify /home/specify \
 	&& mkdir /usr/local/specify_wb_upload \
 	&& chown -R specify:specify /usr/local/ \
-	&& mkdir /var/www/html/specify \
+  && mkdir /var/www/html/specify \
 	&& mkdir /var/www/html/specify/specify_depository \
 	&& chown -R specify:www-data /var/www/html/specify
 
@@ -81,7 +77,6 @@ RUN rm -rf /usr/local/specify6/*
 	
 ############################	
 ### APACHE CONFIGURATION ###
-
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP specify
 ENV APACHE_LOG_DIR /var/log/apache2
