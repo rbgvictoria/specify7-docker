@@ -19,7 +19,7 @@ Specify 7 is build upon Specify 6, so you need a running instance of Specify 6.
 
 - Add your database connection details in `local_specify_settings.py`. If you 
   want to connect to a local instance of MySQL, use `host.docker.internal`, not 
-  `localhost` as `DATABASE_HOST`.
+  `localhost`, as `DATABASE_HOST`.
 
 - Build the Docker image and start the container
   ```
