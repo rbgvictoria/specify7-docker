@@ -7,7 +7,7 @@ is for version 7.3.1 of the software.
 Specify 7 is build upon Specify 6, so you need a running instance of Specify 6.
 
 - [Installation](#Installation)
-- [Upgrade from Specify 7.3.1 to Specify 7.4.0](#upgrade-from-specify-7-3-1-to-specify-7-4-0)
+- [Upgrade from Specify 7.3.1 to Specify 7.4.0](#upgrade-from-specify-731-to-specify-740)
 
 ## Installation
 
