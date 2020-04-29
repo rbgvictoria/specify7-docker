@@ -16,7 +16,7 @@ RUN apt-get install -y libssl-dev libsasl2-dev libldap2-dev
 RUN apt-get install -y nodejs npm
 
 # Get Specify 7
-ARG SPECIFY7_VERSION=7.3.1
+ARG SPECIFY7_VERSION=7.4.0
 ENV SPECIFY7_VERSION ${SPECIFY7_VERSION}
 
 RUN cd /usr/local/ \

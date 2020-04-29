@@ -6,6 +6,9 @@ is for version 7.3.1 of the software.
 
 Specify 7 is build upon Specify 6, so you need a running instance of Specify 6.
 
+- [Installation](#Installation)
+- [Upgrade from Specify 7.3.1 to Specify 7.4.0](#upgrade-from-specify-7-3-1-to-specify-7-4-0)
+
 ## Installation
 
 - Clone this repository.
@@ -50,6 +53,31 @@ subfolder.
   ```
     docker-compose up -d --build
   ``` 
+
+  ## Upgrade from Specify 7.3.1 to Specify 7.4.0
+
+  In order to run Specify 7.4.0, you have to replace the Specify 6 client 
+  (`specify6_thick_client`) with Specify 6.8.00 and make sure the database you
+  want to connect to has been upgraded to the new version.
+
+  Then:
+
+  - Pull the changes from the GitHub repository:
+
+  ```
+    git pull origin master
+  ```
+
+  - Destroy the container:
+
+  ```
+    docker-compose down
+  ```
+
+  - Rebuild the container:
+
+  ```
+    docker-compose up -d --build
 
 
 
