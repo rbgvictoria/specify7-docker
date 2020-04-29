@@ -56,7 +56,7 @@ subfolder.
 
 ## Upgrade from Specify 7.3.1 to Specify 7.4.0
 
-In order to run Specify 7.4.0, you have to replace the Specify 6 client 
+In order to run Specify 7.4.0, all you have to do is replace the Specify 6 client 
 (`specify6_thick_client`) with Specify 6.8.00 and make sure the database you
 want to connect to has been upgraded to the new version.
 
