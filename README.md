@@ -78,6 +78,7 @@ subfolder.
 
   ```
     docker-compose up -d --build
+  ```
 
 
 
